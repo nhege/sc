@@ -41,7 +41,7 @@ td:nth-child(n+2):hover{
 .active{
 	background-color: #dadada;
 }
-.java{
+.cache{
 	background-color: #ffff7f;
 }
 .fl{
@@ -50,7 +50,7 @@ td:nth-child(n+2):hover{
 .classactive{
 	background-color: #aaffff;
 }
-.sql{
+.ai{
 	background-color: #fbffde;
 }
 .math{
@@ -59,7 +59,7 @@ td:nth-child(n+2):hover{
 .pe{
 	background-color: #55aaff;
 }
-.history{
+.aws{
 	background-color: #f87c00;
 }
 .zixiu{
