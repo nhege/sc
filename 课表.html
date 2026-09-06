@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-2027-1 课表</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: #f5f6fa;
+    display: flex;
+    justify-content: center;
+    padding: 24px 12px;
+    color: #1a1a1a;
+  }
+  .wrap { width: 100%; max-width: 1060px; }
+  h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    table-layout: fixed;
+  }
+  th, td {
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+  thead th {
+    background: #cfe0f5;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 6px;
+  }
+  .period {
+    background: #fff;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .course { padding: 14px 8px; }
+  .course .name { font-size: 15px; margin-bottom: 4px; }
+  .course .teacher { font-size: 13px; color: #333; }
+  .course .room { font-size: 13px; color: #333; }
+  .course .room.b { font-weight: 700; font-size: 14px; }
+  .course .t { font-weight: 700; }
+  .empty { background: #fff; }
+  /* 手柄默认透明隐藏，悬停到边线附近时光标变为对应方向的拉伸箭头 */
+  td, th { position: relative; }
+  .rs-handle { position: absolute; z-index: 5; touch-action: none; }
+  .rs-handle.e { top: 0; right: -5px; width: 11px; height: 100%; cursor: ew-resize; }
+  .rs-handle.s { bottom: -5px; left: 0; width: 100%; height: 11px; cursor: ns-resize; }
+  .rs-handle.se { right: -5px; bottom: -5px; width: 15px; height: 15px; cursor: nwse-resize; }
+  body.resizing { user-select: none; cursor: inherit; }
+  .rs-line { position: fixed; z-index: 99; background: #4a90d9; pointer-events: none; display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>2026-2027-1 2214云计算技师班的课表</h1>
+  <table>
+    <thead>
+      <tr>
+        <th class="period"></th>
+        <th>周一</th>
+        <th>周二</th>
+        <th>周三</th>
+        <th>周四</th>
+        <th>周五</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 第1节 / 第2节 -->
+      <tr>
+        <td class="period">第1节<br>08:00 - 08:40</td>
+        <td class="course" rowspan="2">
+          <div class="name">移动应用开发</div>
+          <div class="teacher">杜迪</div>
+          <div class="room">1009</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name">大数据数字工程师培训</div>
+          <div class="teacher">金画</div>
+          <div class="room">906</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name">技师研修</div>
+          <div class="teacher">王晨</div>
+          <div class="teacher">强能楼</div>
+          <div class="room">407</div>
+        </td>
+        <td class="course">
+          <div class="name t">人工智能通识</div>
+          <div class="teacher">孙佳美</div>
+          <div class="room">906</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name">大数据数字工程师培训</div>
+          <div class="teacher">金画</div>
+          <div class="room">1010</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="period">第2节<br>08:50 - 09:30</td>
+        <td class="course">
+          <div class="name t">自习课</div>
+          <div class="room b">906</div>
+        </td>
+      </tr>
+
+      <!-- 第3节 / 第4节 -->
+      <tr>
+        <td class="period">第3节<br>09:55 - 10:35</td>
+        <td class="course" rowspan="2">
+          <div class="name">公有云高级实战</div>
+          <div class="teacher">何鹏</div>
+          <div class="room">1007</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name t">自习课</div>
+          <div class="room b">908</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name">移动应用开发</div>
+          <div class="teacher">杜迪</div>
+          <div class="room">905</div>
+        </td>
+        <td class="course">
+          <div class="name">大数据数字工程师培训</div>
+          <div class="teacher">金画</div>
+          <div class="room">904</div>
+        </td>
+        <td class="course">
+          <div class="name t">自习课</div>
+          <div class="room b">1007</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="period">第4节<br>10:45 - 11:25</td>
+        <td class="course">
+          <div class="name t">自习课</div>
+          <div class="room b">904</div>
+        </td>
+        <td class="course">
+          <div class="name">视频图像信息系统查验操作</div>
+          <div class="teacher">王晨</div>
+          <div class="room">1007</div>
+        </td>
+      </tr>
+
+      <!-- 第5节 / 第6节 -->
+      <tr>
+        <td class="period">第5节<br>13:30 - 14:10</td>
+        <td class="course" rowspan="2">
+          <div class="name t">自习课</div>
+          <div class="room b">908</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name">AIGC</div>
+          <div class="teacher">陈柠超</div>
+          <div class="teacher">强能楼</div>
+          <div class="room">407</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name">公有云高级实战</div>
+          <div class="teacher">何鹏</div>
+          <div class="room">1005</div>
+        </td>
+        <td class="course" rowspan="2">
+          <div class="name">公有云高级实战</div>
+          <div class="teacher">何鹏</div>
+          <div class="teacher">强能楼407</div>
+        </td>
+        <td class="course">
+          <div class="name t">自习课</div>
+          <div class="room b">905</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="period">第6节<br>14:25 - 15:05</td>
+        <td class="course">
+          <div class="name t">班团课905</div>
+        </td>
+      </tr>
+
+      <!-- 第7节 -->
+      <tr>
+        <td class="period">第7节<br>15:15 - 15:55</td>
+        <td class="empty" colspan="5"></td>
+      </tr>
+
+      <!-- 第8节 -->
+      <tr>
+        <td class="period">第8节（高年级16:00放学）低年级如下<br>16:05 - 16:45</td>
+        <td class="empty" colspan="5"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<script>
+(function () {
+  const table = document.querySelector('table');
+  const rows = table.rows;
+
+  // 统一初始尺寸：所有列等宽；正文行统一为内容所需的最大行高（跨两节的格子即为两倍行高，也相互统一）
+  const nCols = [...rows[0].cells].reduce((s, c) => s + c.colSpan, 0);
+  const colW = table.clientWidth / nCols;
+  const cg = document.createElement('colgroup');
+  for (let i = 0; i < nCols; i++) {
+    const c = document.createElement('col');
+    c.style.width = colW + 'px';
+    cg.appendChild(c);
+  }
+  table.insertBefore(cg, table.firstChild);
+  const colEls = cg.children;
+
+  // 列宽生效后按内容测出统一行高，固定为像素值（作为拖拽的基础），再给每个格子加 右边(e) / 下边(s) / 右下角(se) 手柄
+  let headH = 0, bodyH = 0;
+  for (const tr of rows) {
+    const h = tr.getBoundingClientRect().height;
+    if (tr.parentElement.tagName === 'THEAD') headH = Math.max(headH, h);
+    else bodyH = Math.max(bodyH, h);
+  }
+  for (const tr of rows) {
+    tr.style.height = (tr.parentElement.tagName === 'THEAD' ? headH : bodyH) + 'px';
+    for (const cell of tr.cells) {
+      for (const dir of ['e', 's', 'se']) {
+        const h = document.createElement('div');
+        h.className = 'rs-handle ' + dir;
+        cell.appendChild(h);
+        h.addEventListener('pointerdown', e => startDrag(e, dir, cell));
+      }
+    }
+  }
+
+  const line = document.createElement('div');
+  line.className = 'rs-line';
+  document.body.appendChild(line);
+
+  function startDrag(e, dir, cell) {
+    e.preventDefault();
+    e.stopPropagation();
+    const startX = e.clientX, startY = e.clientY;
+
+    // 该格子跨越的列 / 行在全局的下标
+    let c0 = 0;
+    for (const c of cell.parentElement.cells) {
+      if (c === cell) break;
+      c0 += c.colSpan;
+    }
+    const colIdx = Array.from({length: cell.colSpan}, (_, i) => c0 + i);
+    const r0 = cell.parentElement.rowIndex;
+    const rowIdx = Array.from({length: cell.rowSpan}, (_, i) => r0 + i);
+
+    const startW = colIdx.map(i => parseFloat(colEls[i].style.width));
+    // 行高的下标：rowIndex 从 1（tbody 第一行）开始
+    const startHr = rowIdx.map(i => parseFloat(rows[i].style.height));
+
+    const minW = 40, minH = 30;
+    function onMove(ev) {
+      const dx = ev.clientX - startX, dy = ev.clientY - startY;
+      if (dir !== 's') {
+        // 宽度增量均摊到跨越的各列
+        colIdx.forEach((i, k) => {
+          colEls[i].style.width = Math.max(minW, startW[k] + dx / colIdx.length) + 'px';
+        });
+      }
+      if (dir !== 'e') {
+        rowIdx.forEach((i, k) => {
+          rows[i].style.height = Math.max(minH, startHr[k] + dy / rowIdx.length) + 'px';
+        });
+      }
+      // 显示参考线
+      const r = cell.getBoundingClientRect();
+      if (dir === 'e' || dir === 'se') {
+        line.style.left = r.right + 'px';
+        line.style.top = '0';
+        line.style.width = '2px';
+        line.style.height = '100vh';
+      } else {
+        line.style.left = '0';
+        line.style.top = r.bottom + 'px';
+        line.style.width = '100vw';
+        line.style.height = '2px';
+      }
+      line.style.display = 'block';
+    }
+    function onUp() {
+      document.removeEventListener('pointermove', onMove);
+      document.removeEventListener('pointerup', onUp);
+      line.style.display = 'none';
+      document.body.classList.remove('resizing');
+    }
+    document.body.classList.add('resizing');
+    document.body.style.cursor = dir === 's' ? 'ns-resize' : dir === 'e' ? 'ew-resize' : 'nwse-resize';
+    document.addEventListener('pointermove', onMove);
+    document.addEventListener('pointerup', onUp);
+  }
+})();
+</script>
+</body>
+</html>
